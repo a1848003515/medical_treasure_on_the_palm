@@ -1,0 +1,32 @@
+<!--miniprogram/pages/order/payment/payment2.wxml-->
+<view class="payment">
+  <view class="msg">
+    <input placeholder="收货人" maxlength="20" style="margin:10rpx 0;width:96%;" bindinput="handleGetName" value="{{consignee}}"></input>
+    <input placeholder="手机号码" maxlength="11" style="margin:10rpx 0;width:96%;" bindinput="handleGetPhone" value="{{phone}}"></input>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" style="margin:10rpx 0;width:96%;">
+         {{region[0]}}{{region[1]}}{{region[2]}}
+    </picker>
+    <textarea placeholder="详细地址：如道路、门牌号、小区、楼栋号、单元室等" maxlength="70" style="margin:10rpx 0;width:96%;" value="{{address}}"bindinput="handleGetAddr"></textarea>
+  </view>
+  <view class="menu">
+    <view class="menu-title">
+      订单详情：
+    </view>
+    <view class="menu-list" wx:for="{{menuList}}" wx:key="index">
+        <image src="{{item.img}}"></image>
+        <text class="name">{{item.name}}</text>
+        <text class="num">X{{item.num}}</text>
+        <text class="price">￥{{item.num*item.price}}</text>
+    </view>
+    <view class="menu-price">
+      <text>小计 ￥{{priceTotal}}</text>
+    </view>
+  </view>
+  <view class="pay">
+    <view class="priceTotal">￥{{priceTotal}}</view>
+    <view class="post" bindtap="handlePay">
+      <text>支付</text>
+      <text class="iconfont iconyoujiantou" style="font-size:50rpx;"></text>
+    </view>
+  </view>
+</view>

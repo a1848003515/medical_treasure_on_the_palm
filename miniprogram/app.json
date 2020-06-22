@@ -1,26 +1,83 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
+    "pages/message/message",
+    "pages/near/near",
+    "pages/user/user",
+    "pages/editUserInfo/editUserInfo",
+    "pages/medication/medication",
+    "pages/healthRecord/healthRecord",
+    "pages/contact/contact",
+    "pages/editUserInfo/head/head",
+    "pages/editUserInfo/name/name",
+    "pages/editUserInfo/signature/signature",
+    "pages/editUserInfo/phone/phone",
+    "pages/editUserInfo/weixin/weixin",
+    "pages/editUserInfo/identity/identity",
+    "pages/near/nav/nav",
+    "pages/detail/detail",
+    "pages/message/chatroom/chatroom",
+    "pages/message/userMessage/userMessage",
+    "pages/editUserInfo/order/order",
+    "pages/message/patientList/patientList",
+    "pages/editUserInfo/workTime/workTime",
+    "pages/healthRecord/sugar/sugar",
+    "pages/healthRecord/pressure/pressure",
+    "pages/healthRecord/sugar/item/item",
+    "pages/healthRecord/pressure/item/item",
+    "pages/index/search/search",
+    "pages/index/details/hospital/hospital",
+    "pages/index/details/drugs/drugs",
+    "pages/index/details/health/health",
+    "pages/index/details/know/know",
+    "pages/order/order",
+    "pages/order/shopping/shopping",
+    "pages/order/payment/payment",
+    "pages/contact/post/post",
+    "pages/contact/wenz/wenz",
+    "pages/order/payment2/payment2"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "掌上就医保",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "tabBar": {
+    "color": "1296DB",
+    "selectedColor": "13227A",
+    "list": [
+      {
+        "iconPath": "images/tabBar/首页.png",
+        "selectedIconPath": "images/tabBar/首页_active.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/tabBar/消息.png",
+        "selectedIconPath": "images/tabBar/消息_active.png",
+        "pagePath": "pages/message/message",
+        "text": "消息"
+      },
+      {
+        "iconPath": "images/tabBar/附近.png",
+        "selectedIconPath": "images/tabBar/附近_active.png",
+        "pagePath": "pages/near/near",
+        "text": "附近"
+      },
+      {
+        "iconPath": "images/tabBar/我的.png",
+        "selectedIconPath": "images/tabBar/我的_active.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
 }

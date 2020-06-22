@@ -1,0 +1,21 @@
+<!--miniprogram/pages/index/details/know/know.wxml-->
+
+<view class="detail" wx:if="{{logged!=-1}}">
+  <view class="content">
+    <view class="content-text">
+      <text class="text">标题：</text>
+      <text>{{item.name}}</text>
+    </view>
+    <view class=" content-text ">
+      <text class="text">分类：</text>
+      <text>{{item.subTypeName}}</text>
+    </view>
+    <view class="content-text" wx:for="{{item.tagList}}" wx:key="index">
+      <text class="text">{{item.name}}：</text>
+      <text>{{item.content}}</text>
+    </view>
+  
+  </view>
+
+
+</view>

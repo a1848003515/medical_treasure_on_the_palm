@@ -1,0 +1,194 @@
+/* miniprogram/pages/order/shopping/shopping.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.big-box{
+  border-top: 2rpx solid #F7F7F7;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.big-box .left-menu{
+  width: 27%;
+  background: #F7F7F7;
+  height: 100%;
+}
+
+.Default-Class{
+  padding: 26rpx 0;
+  font-size: 28rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #E2E2E2;
+  border-left: 8rpx solid #F7F7F7;
+}
+
+.scrollclass{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scroll-box .title{
+  padding: 26rpx 20rpx;
+  font-size: 28rpx;
+  text-align: left;
+}
+
+.scroll-box-product-box{
+  display: flex;
+  justify-content: space-between;
+  width: 94%;
+  margin: auto;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #E2E2E2;
+}
+
+.scroll-box-product-box .product-img{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+}
+
+.scroll-box-product-box .product-info-box{
+  width: 70%;
+  position: relative;
+}
+
+.scroll-box-product-box .product-info-box .product-name{
+  font-weight: 600;
+  color: #333;
+  font-size: 30rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scroll-box-product-box .product-info-box .product-English-name{
+  color: #666;
+  font-size: 24rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scroll-box-product-box .product-price{
+  width:90%;
+  font-weight: 600;
+  color: #333;
+  font-size: 30rpx;
+  position: absolute;
+  bottom: 0rpx;
+  display: flex;
+  justify-content: space-between
+}
+
+.avtive{
+  padding: 26rpx 0;
+  background: #fff;
+  border-left: 8rpx solid #89A0D2;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+  font-size: 28rpx;
+}
+.bottom{
+  position: absolute;
+  bottom:0;
+  width:100%;
+  height:120rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: red;
+}
+.box{
+  width:70%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right:2px solid #fff;
+}
+.gouwuche{
+  width:36%;
+  height:100rpx;
+  color:#fff;
+  text-align: center;
+}
+.gouwuche .gouwuche-num{
+  width:40rpx;
+  height:40rpx;
+  position: fixed;
+  border-radius: 50%;
+  bottom:80rpx;
+  left:120rpx;
+  color:#fff;
+  font-size:30rpx;
+  background: #ff7b0f;
+}
+.zongjine{
+  width:64%;
+  height:100rpx;
+  color:#fff;
+  font-size:45rpx;
+  line-height: 100rpx;
+}
+.zongjine text{
+  font-size:55rpx;
+}
+.zhifu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:25%;
+  height:100rpx;
+  line-height: 100rpx;
+  color:#fff;
+}
+.zhifu text{
+  font-size:45rpx;
+}
+.zhifu .youjiantou{
+  font-size:50rpx;
+}
+
+.main-menu{
+  width:99.5%;
+  position: fixed;
+  bottom:120rpx;
+  background-color: #fff;
+}
+.box-menu{
+  width:100%;
+  height:120rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-menu image{
+  width:100rpx;
+  height:100rpx;
+  margin:0 10rpx;
+}
+
+.main-menu .main-price{
+  width:420rpx;
+  height:100rpx;
+}
+.main-menu .mian-aj{
+  margin-right:20rpx;
+  width:150rpx;
+  height:100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+

@@ -1,0 +1,48 @@
+/* components/patienList/patientList.wxss */
+.view{
+  width:100%;
+  height:150rpx;
+  background-color:#fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.item-2{
+  width:360rpx;
+  height:100rpx;
+
+  text-indent: 20rpx
+}
+.view .item-name{
+  font-size:40rpx;
+
+}
+.view .item-cont{
+  font-size:30rpx;
+  color:#b4b5b6;
+}
+
+image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  margin-left:50rpx;
+  z-index:1
+}
+.delete{
+  width:60rpx;
+  height:120rpx;
+  color:edeff5;
+  text-align: center;
+  line-height: 120rpx;
+}
+.add{
+  width:110rpx;
+  height:70rpx;
+  background: #edeff5;
+  border-radius:35%;
+  color:#000;
+  text-align: center;
+  line-height: 70rpx;
+}

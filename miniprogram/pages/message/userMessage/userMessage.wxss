@@ -1,0 +1,7 @@
+/* miniprogram/pages/message/userMessage/userMessage.wxss */
+.userMessage{
+  padding:20rpx;
+}
+.userMsg-text{
+  margin:30rpx;
+}

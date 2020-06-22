@@ -1,0 +1,59 @@
+<!--nearby.wxml-->
+<scroll-view class="sv" scroll-y="true">
+
+  <!-- <view class="map-inputtips-input">
+    <input bindinput="bindInput" placeholder="搜索" focus="true" />
+  </view> -->
+
+  <view style="overflow:hidden;">
+    <view class="items" wx:for="{{array}}" wx:key="index" wx:for-item="item" bindtap="wxSearchFn" bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" data-code="{{item.code}}" data-text="{{item.text}}">
+      <image class="item-img" mode="aspectFit" src="{{item.src}}"></image>
+      <view class="item-text">{{item.text}}</view>
+    </view>
+  </view>
+
+  <!-- 测试地图选点如下 -->
+  <view class="data">
+    <view class="map_container">
+      <map class="map" id="map" circles='{{circles}}' longitude="{{longitude}}" latitude="{{latitude}}" scale="15" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
+    </view>
+  </view>
+
+  
+  <view class="near-list">
+  <!-- <navigator  hover-class="none" url="./nav/nav" open-type="navigate"> -->
+    <view class="list-item" wx:for="{{markers}}" wx:key="index">
+
+    <navigator class="nav-list" hover-class="none" url="{{'./nav/nav?address='+item.title}}">
+      <image class="list-img" mode="aspectFill" src="../../images/near/hospital2.png"></image>
+      <view class="list-text">
+        <view>
+          <text>名称: {{item.title}}</text>
+        </view>
+        <view>
+          <text>地址: {{item.address}}</text>
+        </view>
+        <view>
+          <text>联系: {{item.telephone}}</text>
+        </view>
+        <view style="display:none">
+          <text>{{item.latitude}}</text>
+        </view>
+        <view style="display:none">
+          <text>{{item.longitude}}</text>
+        </view>
+      </view>
+    
+    </navigator>
+      
+      <view class="list-nav"  bindtap="handleTo" data-id="{{index}}">
+          <image mode="aspectFill" src="../../images/near/nav.png"></image>
+          <br/>
+          <view style="font-size:20rpx;color:#1296db;">去这里</view>
+      </view>
+    </view>
+ <!-- </navigator> -->
+  
+  </view>
+</scroll-view>
+<!-- 导航 -->

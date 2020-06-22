@@ -1,0 +1,48 @@
+<!--miniprogram/pages/index/details/drugs/drugs.wxml-->
+<!--  -->
+<view class="detail" wx:if="{{item.ret_code!=-1}}">
+  <view class="image">
+    <image class src="{{item.imgUrl}}"></image>
+  </view>
+  <view class="content">
+    <view class="content-text">
+      <text class="text">药品名称：</text>
+      <text>{{item.drugName}}</text>
+    </view>
+    <view class=" content-text ">
+      <text class="text">药品产地：</text>
+      <text>{{item.pro_area}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">药品类型：</text>
+      <text>{{item.tag}}</text>
+    </view>
+    <view class=" content-text ">
+      <text class="text">注意：</text>
+      <text>{{item.jj}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">危害：</text>
+      <text>{{item.ywgl}}</text>
+    </view>
+    <view class=" content-text ">
+      <text class="text">用量：</text>
+      <text>{{item.yfyl}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">详细说明：</text>
+      <text>{{item.ywdl}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">保质期：</text>
+      <text>{{item.yxq}}</text>
+    </view>
+    <view class="content-info content-text">
+      <text class="text">成分：</text>
+      <text>{{item.zycf}}</text>
+    </view>
+
+  </view>
+
+
+</view>

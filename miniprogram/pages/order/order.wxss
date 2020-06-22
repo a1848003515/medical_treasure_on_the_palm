@@ -1,0 +1,124 @@
+/* miniprogram/pages/order/order.wxss */
+.order{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+}
+.tab {
+  width:20%;
+  margin:0 50rpx;
+
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.topTabSwiper {
+  width:100%;
+
+  display: flex;
+  justify-content: space-between
+}
+
+/* .topTabSwiper:after {
+  content: "";
+  clear: both;
+  display: block;
+} */
+
+.tabBorer {
+  border-bottom: 2px solid #f00;
+  color: #f00;
+  font-weight: 600;
+  font-size: 36rpx;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper swiper-item {
+  width: 100%;
+  height: 100%;
+}
+.box{
+  width:94%;
+  height:300rpx;
+  margin:20rpx auto;
+  border:1px solid black;
+  padding:10rpx 20rpx;
+  border-radius: 10rpx;
+}
+.box .box-title{
+  width:100%;
+  height:40rpx;
+  font-size:30rpx;
+  line-height: 40rpx;
+}
+.box .box-content{
+  width:100%;
+  height:200rpx;
+  margin-top:5rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.box .box-content image{
+  width:150rpx;
+  height:150rpx;
+
+}
+.box .box-content .content{
+  width:600rpx;
+  height:200rpx;
+
+}
+.content-s{
+  width:100%;
+  height:150rpx; 
+}
+.content-s .content-s-box{
+  width:100%;
+  height:40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items:cneter;
+}
+.content-s .content-s-box .s-box-1{
+  padding-left:20rpx;
+  width: 420rpx;
+
+}
+.content-s .content-s-box .s-box-2{
+  width: 80rpx;
+
+}
+.content-x{
+  width:100%;
+  height:50rpx;
+
+}
+.content-x text{
+  margin-right:15rpx;
+  margin-top:10rpx;
+  float:right;
+}
+
+.box-bottom{
+  width:100%;
+  height:60rpx;
+
+}
+.box-bottom .btn{
+  margin-top:5rpx;
+  text-align: center;
+  line-height: 50rpx;
+  width:150rpx;
+  height:50rpx;
+  border-radius: 20rpx;
+  float:right;
+  margin-right:20rpx;
+  border:1px solid black;
+}
+

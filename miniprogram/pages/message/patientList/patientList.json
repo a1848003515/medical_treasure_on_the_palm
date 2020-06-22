@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "patient-list":"/components/patientList/patientList"
+  }
+}

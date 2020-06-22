@@ -1,0 +1,38 @@
+<view class="medication" wx:if="{{logged}}">
+
+  <view class="box">
+    <view class="box-item">
+      <text>方案名称</text>
+      <input placeholder="请输入方案名称（最大限制20字)" maxlength='20' bindinput="handleTitle"></input>
+    </view>
+
+
+    <view class="box-item">
+      <text>方案内容</text>
+      <textarea placeholder="请输入方案内容（最大限制80字" maxlength='60' bindinput="handleContent"></textarea>
+    </view>
+
+
+    <view class="shijian">
+      <text>设置时间</text>
+      <checkbox-group bindchange="checkboxChange" class="checkbox" class="date">
+        <label wx:for="{{days}}" wx:key="index" class="label">
+          <text>{{item.value}}</text>
+          <checkbox value="{{item.value}}" checked="{{item.checked}}"></checkbox>
+        </label>
+        <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindPickerTime" class="time">
+          <view class="register-item">{{time}}</view>
+        </picker>
+      </checkbox-group>
+      <view>
+        <button class="delete" bindtap="handleDelet" data-id="{{medicationId}}">删除</button>
+        <button class="adopt" bindtap="handleAdopt" data-id="{{medicationId}}">提交</button>
+      </view>
+
+    </view>
+
+
+
+  </view>
+
+</view>

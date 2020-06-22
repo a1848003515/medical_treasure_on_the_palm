@@ -1,0 +1,85 @@
+<!--index.wxml-->
+<view class="user">
+  <view class="user-info">
+    <image src="{{userPhoto}}"></image>
+    <button wx:if="{{!logged}}" disabled="{{diabled}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信登陆</button>
+    <text wx:elif="{{identity=='doctor'}}">欢迎您： {{nickName}} 医生</text>
+    <text wx:elif="{{identity=='admin'}}">欢迎您：管理员</text>
+    <text wx:else>欢迎您： {{nickName}}</text>
+  </view>
+
+  <view wx:if="{{identity=='admin'&&logged}}">
+      <view class="table">
+        <view class="tr bg-w">
+          <view class="th">姓名</view>
+          <view class="th">医院</view>
+          <view class="th">职业</view>
+          <view class="th">职工号</view>
+          <view class="th ">认证操作</view>
+        </view>
+        <view wx:for="{{ listData }}" wx:key="index" class="tr bg-g" wx:if="{{ item.address && item.occupation && item.occupationNumber&& item.identity!='doctor'}}">
+            <view class="td">{{item.nickName}}</view>
+            <view class="td">{{item.address}}</view>
+            <view class="td">{{item.occupation}}</view>
+            <view class="td">{{item.occupationNumber}}</view>
+            <view class="td">
+            <text bindtap="handleP" data-id="{{item._id}}">通过</text>/<text data-id="{{item._id}}" bindtap="handleNP">不通过</text>
+          </view>
+            
+        </view>
+      </view>
+  </view>
+
+  <view wx:elif="{{logged}}" class="user-list">
+    <view class="user-list-text">
+      <navigator hover-class="none" url="../editUserInfo/editUserInfo" open-type="navigate" class="user-list-nav">
+        <text>账户信息</text>
+        <text class="iconfont iconyoujiantou"></text>
+        <!-- <image src="../../images/user/right.png"></image> -->
+      </navigator>
+    </view>
+
+    <view class="user-list-text">
+      <navigator hover-class="none" url="../order/order" open-type="navigate" class="user-list-nav">
+        <text>我的订单</text>
+        <text class="iconfont iconyoujiantou"></text>
+        <!-- <image src="../../images/user/right.png"></image> -->
+      </navigator>
+    </view>
+
+    <view class="user-list-text">
+      <navigator hover-class="none" url="../medication/medication" open-type="navigate" class="user-list-nav">
+        <text>设置用药方案</text>
+        <text class="iconfont iconyoujiantou"></text>
+        <!-- <image src="../../images/user/right.png"></image> -->
+      </navigator>
+    </view>
+
+    <view class="user-list-text">
+      <navigator hover-class="none" url="../healthRecord/healthRecord" open-type="navigate" class="user-list-nav">
+        <text>健康记录</text>
+        <text class="iconfont iconyoujiantou"></text>
+
+        <!-- <image src="../../images/user/right.png"></image> -->
+      </navigator>
+    </view>
+
+    <view class="user-list-text" wx:if="{{ identity=='doctor' }}">
+      <navigator hover-class="none" url="../contact/contact" open-type="navigate" class="user-list-nav">
+        <text>发表文章</text>
+        <text class="iconfont iconyoujiantou"></text>
+        <!-- <image src="../../images/user/right.png"></image> -->
+      </navigator>
+    </view>
+    
+    <view class="user-list-text" style="margin-bottom:20rpx;" bindtap="handleCallPhone">
+      <view class="user-list-nav">
+        <text>联系我们</text>
+        <text class="iconfont iconyoujiantou"></text>
+        <!-- <image src="../../images/user/right.png"></image> -->
+      </view>
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,9 @@
+<!--miniprogram/pages/healthRecord/healthRecord.wxml-->
+<view class="health" style="background-image: url('../../images/user/timg.jpg');background-size:100% 100%;">
+  <navigator class="sugar" url="./sugar/sugar">
+    <text>血糖记录</text>
+  </navigator>
+  <navigator class="pressure" url="./pressure/pressure">
+    <text>血压记录</text>
+  </navigator>
+</view>

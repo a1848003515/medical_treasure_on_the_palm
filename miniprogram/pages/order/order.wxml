@@ -1,0 +1,91 @@
+<!-- miniprogram/pages/order/order.wxml -->
+
+<view class="order">
+  <view class='topTabSwiper'>
+    <view class='tab  {{current == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>全部</view>
+    <view class='tab  {{current == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>进行中</view>
+    <view class='tab  {{current == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>已完成</view>
+  </view>
+
+  <view style="flex:1;">
+    <swiper current="{{current}}" class='swiper' duration="300" bindchange="bindchange">
+      <swiper-item scroll-y="true" style="overflow-y:auto"> 
+        <view class="box" wx:for="{{orders}}" wx:for-item="item" wx:key="index">
+          <view class="box-title">订单号：{{item._id}}</view>
+          <view class="box-content">
+            <image src="{{item.orderList.menu[0].img}}"></image>
+            <view class="content">
+              <view class="content-s">
+                  <view class="content-s-box" wx:for="{{item.orderList.menu}}" wx:for-item="items" wx:key="index">
+                    <view class="s-box-1">{{items.name}}</view>
+                    <view class="s-box-2">X{{items.num}}</view>
+                    <view class="s-box-2">￥{{items.price*items.num}}</view>
+                  </view>
+              </view>
+              <view class="content-x">
+                <text>总计：￥{{item.orderList.priceTotal}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="box-bottom">
+            <view class="btn" wx:if="{{item.done}}">已完成</view>
+            <view class="btn" wx:else bindtap="handleNav"  data-id="{{item._id}}">未付款</view>
+          </view>
+        </view>
+      </swiper-item>
+
+      <swiper-item scroll-y="true" style="overflow-y:auto">     
+        <view class="box" wx:for="{{orders}}" wx:for-item="item" wx:key="index" wx:if="{{!item.done}}">
+          <view class="box-title">订单号：{{item._id}}</view>
+          <view class="box-content">
+            <image src="{{item.orderList.menu[0].img}}"></image>
+            <view class="content">
+              <view class="content-s">
+                  <view class="content-s-box" wx:for="{{item.orderList.menu}}" wx:for-item="items" wx:key="index">
+                    <view class="s-box-1">{{items.name}}</view>
+                    <view class="s-box-2">X{{items.num}}</view>
+                    <view class="s-box-2">￥{{items.price*items.num}}</view>
+                  </view>
+              </view>
+              <view class="content-x">
+                <text>总计：￥{{item.orderList.priceTotal}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="box-bottom">
+            <view class="btn" wx:if="{{item.done}}">已完成</view>
+            <view class="btn" wx:else bindtap="handleNav"  data-id="{{item._id}}">未付款</view>
+          </view>
+        </view>
+      </swiper-item>
+
+      <swiper-item scroll-y="true" style="overflow-y:auto">
+        <view class="box" wx:for="{{orders}}" wx:for-item="item" wx:key="index" wx:if="{{item.done}}">
+          <view class="box-title">订单号：{{item._id}}</view>
+          <view class="box-content">
+            <image src="{{item.orderList.menu[0].img}}"></image>
+            <view class="content">
+              <view class="content-s">
+                  <view class="content-s-box" wx:for="{{item.orderList.menu}}" wx:for-item="items" wx:key="index">
+                    <view class="s-box-1">{{items.name}}</view>
+                    <view class="s-box-2">X{{items.num}}</view>
+                    <view class="s-box-2">￥{{items.price*items.num}}</view>
+                  </view>
+              </view>
+              <view class="content-x">
+                <text>总计：￥{{item.orderList.priceTotal}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="box-bottom">
+            <view class="btn" wx:if="{{item.done}}">已完成</view>
+            <view class="btn" wx:else bindtap="handleNav"  data-id="{{item._id}}">未付款</view>
+          </view>
+        </view>
+      </swiper-item>
+
+    </swiper>
+
+  </view>
+</view>
+  

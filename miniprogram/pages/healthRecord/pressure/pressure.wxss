@@ -1,0 +1,28 @@
+/* miniprogram/pages/healthRecord/pressure/preessure.wxss */
+page{
+  width:100%;
+  height:100%;
+}
+.preessure{
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.preessure-item{
+  width:25%;
+  height:100rpx;
+  border:1px solid black;
+  border-radius: 20rpx;
+  margin:20rpx;
+}
+navigator{
+  width:100%;
+  height:100rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size:40rpx;
+  background: #07C160;
+}

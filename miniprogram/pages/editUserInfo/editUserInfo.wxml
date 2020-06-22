@@ -1,0 +1,51 @@
+<!--miniprogram/pages/editUserInfo/editUserInfo.wxml-->
+<view class="editUserInfo">
+    <navigator hover-class="none" url="./head/head" open-type="navigate">
+      <view class="editUserInfo-list-item">
+        <text>设置头像</text>
+        <text class="iconfont iconyoujiantou"></text>
+      </view>
+    </navigator>
+
+    <navigator hover-class="none" url="./name/name" open-type="navigate">
+      <view class="editUserInfo-list-item">
+        <text>设置昵称/姓名</text>
+        <text class="iconfont iconyoujiantou"></text>
+      </view>
+    </navigator>
+
+    <navigator hover-class="none" url="./signature/signature" open-type="navigate">
+      <view class="editUserInfo-list-item">
+        <text>设置简介</text>
+        <text class="iconfont iconyoujiantou"></text>
+      </view>
+    </navigator>
+
+    <navigator hover-class="none" url="./workTime/workTime" open-type="navigate">
+      <view class="editUserInfo-list-item">
+        <text>设置工作时间</text>
+        <text class="iconfont iconyoujiantou"></text>
+      </view>
+    </navigator>
+
+    <navigator hover-class="none" url="./phone/phone" open-type="navigate">
+      <view class="editUserInfo-list-item">
+        <text>设置手机号</text>
+        <text class="iconfont iconyoujiantou"></text>
+      </view>
+    </navigator>
+
+    <navigator hover-class="none" url="./weixin/weixin" open-type="navigate">
+      <view class="editUserInfo-list-item">
+        <text>设置微信号</text>
+        <text class="iconfont iconyoujiantou"></text>
+      </view>
+    </navigator>
+
+    <navigator hover-class="none" url="./identity/identity" open-type="navigate">
+      <view class="editUserInfo-list-item">
+        <text>医生认证</text>
+        <text class="iconfont iconyoujiantou"></text>
+      </view>
+    </navigator>
+</view>

@@ -1,0 +1,6 @@
+<!--miniprogram/pages/medication/medication.wxml-->
+<view class="button">
+  <button bindtap="handleAdd">点击添加方案</button>
+</view>
+<medication wx:for="{{medicationList}}" wx:key="index" medicationId="{{item}}" bindmyevent="onMyEvent" />
+<medication2 wx:for="{{list}}" wx:key="index" medicationId="{{item}}" bindmyevent="onMyEvent" />

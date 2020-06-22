@@ -1,0 +1,83 @@
+/* miniprogram/pages/order/payment/payment2.wxss */
+page{
+  background: #f6f6f6;
+}
+.payment{
+  width:100%;
+  height:100%;
+}
+.msg{
+  width:90%;
+  height:300rpx;
+  margin:20rpx auto;
+  background: #fff;
+  padding:10rpx 20rpx;
+}
+.menu{
+  width:90%;
+  margin:20rpx auto;
+  background: #fff;
+  padding:20rpx;
+}
+.menu .menu-title{
+  width:95%;
+  height:60rpx;
+  margin:0 auto;
+}
+.menu .menu-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:10rpx;
+}
+.menu-list image{
+  width:100rpx;
+  height:100rpx;
+}
+.menu-list .name{
+  width:320rpx;
+}
+.menu-list .num{
+  width:100rpx;
+}
+.menu-list .price{
+  width:70rpx;
+}
+.menu .menu-price{
+  width:100%;
+  height:100rpx;
+  line-height: 100rpx;
+  
+}
+.menu .menu-price text{
+  float:right;
+}
+.pay{
+  width:100%;
+  height:120rpx;
+  position: fixed;
+  bottom:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#fff;
+  background: red;
+}
+.priceTotal{
+  width:65%;
+  height:100rpx;
+  line-height: 100rpx;
+  padding-left:50rpx;
+  font-size:50rpx;
+  border-right:2px solid #fff;
+}
+.post{
+  width:25%;
+  height:100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size:45rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

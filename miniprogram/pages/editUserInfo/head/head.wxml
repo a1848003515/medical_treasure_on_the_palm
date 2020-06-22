@@ -1,0 +1,3 @@
+<!--miniprogram/pages/editUserInfo/head/head.wxml-->
+<view class="userImage"><image src="{{userPhoto}}" bindtap="handleUploadImage"></image></view>
+<button bindtap="handleBtn">保存</button>

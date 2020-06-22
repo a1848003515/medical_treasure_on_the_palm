@@ -1,0 +1,44 @@
+<!--miniprogram/pages/index/details/hospital/hospital.wxml-->
+<!--  -->
+<view class="detail" wx:for="{{list}}" wx:key="index">
+  <view class="image">
+    <image class src="{{item.img}}"></image>
+  </view>
+  <view class="content">
+    <view class="content-text">
+      <text class="text">医院名称：</text>
+      <text>{{item.hosName}}</text></view>
+  <view class=" content-text "><text class="text">医院等级：</text>
+      <text>{{item.level}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">医院类型：</text>
+      <text>{{item.type}}</text></view>
+  <view class=" content-text ">
+  <text class="text">医院电话：</text>
+      <text>{{item.tele}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">医院地址：</text>
+      <text>{{item.provinceName}}{{item.cityName}}{{item.addr}}</text></view>
+  <view class=" content-text ">
+  <text class="text">医院网址：</text>
+      <text>{{item.hosLink}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">公交：</text>
+      <text>{{item.bus}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">科室：</text>
+      <text>{{item.keshi}}</text>
+    </view>
+    <view class="content-info content-text">
+      <text class="text">简介：</text>
+      <text>{{item.info}}</text>
+    </view>
+
+  </view>
+
+
+</view>

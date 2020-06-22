@@ -1,0 +1,2 @@
+<!--miniprogram/pages/message/patientList/patientList.wxml-->
+<patient-list wx:for="{{patientList}}" wx:key="index" patientId="{{item}}" bindmyevent="onMyEvent" />

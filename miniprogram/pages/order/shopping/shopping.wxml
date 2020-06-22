@@ -1,0 +1,71 @@
+<!--miniprogram/pages/order/shopping/shopping.wxml-->
+<view class='big-box'>
+
+  <view class='left-menu' style='height:90%'>
+
+    <block wx:for="{{dataList}}" wx:key="key">
+
+      <view class='{{index == idx ? "avtive":"Default-Class"}}' bindtap="switchClassfun" data-index="{{index}}">{{item.title}}</view>
+
+    </block>
+
+  </view>
+
+  <view style='width:73%;height:90%'>
+
+    <scroll-view class='scrollclass' scroll-y="true" scroll-with-animation="true" enable-back-to-top="true" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" bindscroll="bindscrollfunc">
+      <block wx:for="{{dataList}}" wx:for-item="item" wx:key="key">
+        <view class='scroll-box position' id="position{{index}}" data-index="{{index}}">
+          <view class='title'>{{item.title}}</view>
+          <block wx:for="{{item.products}}" wx:for-item="items" wx:key="key">
+            <view class='scroll-box-product-box'>
+              <image src='{{items.img}}' class='product-img'></image>
+              <view class='product-info-box'>
+                <view class='product-name'>{{items.name}}</view>
+                <view class='product-English-name'>{{items.englisgname}}</view>
+                <view class='product-price'>
+                  <view>￥{{items.price}}</view>
+                  <view class="iconfont iconjiahao" bindtap="handleAdd" style="color:red;" data-name="{{items.name}}" data-price="{{items.price}}" data-img="{{items.img}}"></view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<view class="bottom">
+  <view class="box" bindtap="handleDisplay">
+    <view class="gouwuche">
+      <view class="iconfont icongouwuche" style="font-size:70rpx; line-height:100rpx;"></view>
+      <view class="gouwuche-num" wx:if="{{num!=0}}">{{num}}</view>
+    </view>
+    
+    <view class="zongjine">¥
+      <text>{{priceTotal}}</text>
+    </view>
+  </view>
+
+  <view class="zhifu" bindtap="handlePay">
+    <text>去结算</text>
+    <text class=".youjiantou iconfont iconyoujiantou"></text>
+  </view>
+</view>
+
+<scroll-view class="main-menu" style="height:{{height}}rpx;" wx:if="{{logged}}" scroll-y="true">
+  <view class="box-menu" wx:for="{{menuList}}" wx:key="index">
+    <image class="main-img" src="{{item.img}}"></image>
+    <view class="main-price">
+      <view>{{item.name}}</view>
+      <view>￥ {{item.price}}</view>
+    </view>
+    <view class="mian-aj">
+      <view class="iconfont iconjianhao" style="color:red" bindtap="handleReduce" data-name="{{item.name}}" data-price="{{item.price}}" data-num="{{item.num}}"></view>
+      <view>{{item.num}}</view>
+      <view class="iconfont iconjiahao" style="color:red" bindtap="handleAdd" data-name="{{item.name}}" data-price="{{item.price}}"></view>
+    </view>
+
+  </view>
+
+</scroll-view>

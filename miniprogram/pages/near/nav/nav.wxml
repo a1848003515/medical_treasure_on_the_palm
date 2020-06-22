@@ -1,0 +1,9 @@
+<view class="index-list">
+  <view class="list-item" wx:for="{{listData}}" wx:key="index" wx:if="{{item.identity=='doctor'}}">
+    <image src="{{item.userPhoto}}" bindtap="handleDetail" data-id="{{item._id}}"></image>
+    <view class="item-text">
+      <text>{{item.occupation}}</text>
+      <text>{{item.nickName}}</text>
+    </view>
+  </view>
+</view>

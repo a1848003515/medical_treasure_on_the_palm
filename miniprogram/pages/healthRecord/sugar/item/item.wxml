@@ -1,0 +1,32 @@
+<!--miniprogram/pages/healthRecord/sugar/item/item.wxml-->
+<view class="item">
+<button bindtap="handlePost">保存</button>
+<view class="title">
+    <view class="title-item1">日期：{{itemId}}月份</view>
+    <view class="title-item2">
+        <view class="item2-day">
+          <view class="day">早餐空腹</view>
+          <view class="day">早餐后2小时</view>
+          <view class="day">午餐后2小时</view>
+          <view class="day">晚餐后2小时</view>
+        </view>
+        <view class="item2-content">
+          <view class="content">正常人范围{{'<='}}6.11mmol/l</view>
+          <view class="content">正常人范围{{'<='}}7.8mmol/l</view>
+          <view class="content">正常人范围{{'<='}}7.8mmol/l</view>
+          <view class="content">正常人范围{{'<='}}7.8mmol/l</view>
+        </view>
+    </view>
+</view>
+<view class="form">
+  <view class="form-item" wx:for="{{list}}" wx:key="index">   
+    <view class="form-td">{{item}}</view>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handleMoring1" placeholder="{{obj[itemId][item].number1}}"></input>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handleMoring2" placeholder="{{obj[itemId][item].number2}}"></input>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handleNoon" placeholder="{{obj[itemId][item].number3}}"></input>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handleNight" placeholder="{{obj[itemId][item].number4}}"></input>
+  </view>
+</view>
+
+
+</view>

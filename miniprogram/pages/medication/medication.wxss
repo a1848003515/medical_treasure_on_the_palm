@@ -1,0 +1,27 @@
+/* miniprogram/pages/medication/medication.wxss */
+.box{
+  margin:20rpx;
+  border:1px solid black;
+  border-radius: 20rpx;
+  height:480rpx;
+  padding:20rpx;
+}
+.box text{
+  font-size:30rpx;
+  font-weight:700
+}
+.box input{
+  margin:10rpx auto;
+  padding:10rpx;
+  width:90%;
+  border:1px solid black;
+  border-radius: 20rpx;
+}
+.box textarea{
+  border:1px solid black;
+  margin:10rpx auto;
+  padding:10rpx;
+  border-radius: 20rpx;
+  width:90%;
+  height:160rpx;
+}

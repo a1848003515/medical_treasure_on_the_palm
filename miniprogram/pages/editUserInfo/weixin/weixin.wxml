@@ -1,0 +1,3 @@
+<!--miniprogram/pages/editUserInfo/weixin/weixin.wxml-->
+<input type="text" value="{{weixinNumber}}" bindinput="handleText" maxlength='30' placeholder="请输入您的微信号"></input>
+<button bindtap="handleBtn">设置微信号</button>

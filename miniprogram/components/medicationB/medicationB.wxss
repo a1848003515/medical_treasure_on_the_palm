@@ -1,0 +1,118 @@
+/* components/medication/medication.wxss */
+.medication{
+  position: relative
+}
+
+.box{
+  margin:20rpx;
+  border:1px solid black;
+  border-radius: 20rpx;
+  height:480rpx;
+  padding:20rpx;
+}
+
+.box-item{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.box text{
+  display: block;
+  width:80rpx;
+  font-size:30rpx;
+  font-weight:700
+}
+.box input{
+  margin-left:20rpx;
+  margin-top:10rpx;
+  margin-bottom:10rpx;
+  padding:10rpx;
+  width:90%;
+  border:1px solid black;
+  border-radius: 20rpx;
+}
+.box textarea{
+  margin-left:20rpx;
+  margin-top:10rpx;
+  margin-bottom:10rpx;
+  border:1px solid black;
+  padding:10rpx;
+  border-radius: 20rpx;
+  width:90%;
+  height:160rpx;
+}
+
+
+
+.shijian{
+  width:100%;
+  height:200rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shijian text{
+  display: block;
+  width:80rpx;
+  height:80rpx;
+}
+.date{
+  text-indent: 10rpx;
+  border:1px solid black;
+  border-radius: 20rpx;
+  width:55%;
+  height:200rpx;
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.label{
+  display: flex;
+  height:71rpx;
+  line-height: 71rpx;
+}
+.label text{
+  font-size:22rpx;
+}
+.label checkbox{
+  height:60rpx;
+  display: flex;
+  align-items: center;
+  zoom:65%;
+  margin-top:20rpx;
+}
+.time{
+  width:110rpx;
+  height:55rpx;
+  border:1px solid black;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 55rpx;
+  margin-left:10rpx;
+}
+.shijian .delete:not([size='mini']){
+  width:180rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+  background-color:#ff5a68;
+  color:#fff;
+  font-size:18px;
+  margin-bottom:15rpx;
+  font-weight:600;
+}
+
+.shijian .adopt:not([size='mini']){
+  width:180rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+  background-color:#259225;
+  color:#fff;
+  font-size:18px;
+  margin-bottom:15rpx;
+  font-weight:600;
+}

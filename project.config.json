@@ -2,18 +2,33 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"appid": "wxae716c0af28d6c09",
 	"projectname": "%E6%8E%8C%E4%B8%8A%E5%B0%B1%E5%8C%BB%E4%BF%9D",
-	"libVersion": "2.8.1",
+	"libVersion": "2.10.4",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"compileType": "miniprogram",
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -30,13 +45,75 @@
 		"game": {
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"id": 0,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "pages/message/message",
+					"pathName": "pages/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/near/near",
+					"pathName": "pages/near/near",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/message/chat/chat",
+					"pathName": "pages/message/chat/chat",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "userId=f8c2cf1e5e98136b003230bd2a0bbaca",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/message/chatroom/chatroom",
+					"pathName": "pages/message/chatroom/chatroom",
+					"query": "userId=f8c2cf1e5e98136b003230bd2a0bbaca&userName=_需要个昵称",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "pages/near/nav/nav",
+					"pathName": "pages/near/nav/nav",
+					"query": "address=大连医科大学附属第一医院",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/healthRecord/sugar/sugar",
+					"pathName": "pages/healthRecord/sugar/sugar",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

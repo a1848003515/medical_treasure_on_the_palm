@@ -1,0 +1,100 @@
+<!--index.wxml-->
+<view class="msg">
+  <view class="msg-nav">
+    <navigator url="{{'/pages/detail/detail?userId='+_id}}" open-type="navigate" hover-class="none">
+      <image src="{{userPhoto}}"></image>
+    </navigator>
+    <!-- <image src="{{userPhoto}}"></image> -->
+    <!-- <text>{{nickName}}</text> -->
+    <view class="nav-title">消息</view>
+  </view>
+
+
+
+  <view class='topTabSwiper'>
+    <view class='tab  {{current == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>消息</view>
+    <view class='tab  {{current == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>联系人</view>
+  </view>
+
+
+<view style="flex:1;">
+  <swiper current="{{current}}" class='swiper' duration="300" bindchange="bindchange">
+    <swiper-item class="swiper-item" scroll-y="true" style="overflow-y:auto">
+      <view class='msg-list' wx:if="{{logged}}">
+
+        <view class="list-item" bindtap="handleToNav">
+          <image src="{{userPhoto}}"></image>
+          <view wx:if="{{!isMsg}}" class="list-text">
+            <view class="item-2">
+              <view class="item-name">消息助手</view>
+              <view class="item-cont">暂无消息</view>
+            </view>
+            <view class="item-3"></view>
+          </view>        
+          <view wx:else class="list-text">
+            <view class="item-2">
+              <view class="item-name">消息助手</view>
+              <view class="item-cont">您有新的消息</view>
+            </view>
+            <view class="item-3"></view>
+          </view>
+        </view>
+
+        <view class="list-item" bindtap="handleToRegister">
+          <image src="{{userPhoto}}"></image>
+          <view  class="list-text">
+            <view class="item-2">
+              <view class="item-name">预约查看</view>
+              <view class="item-cont">患者预约</view>
+            </view>
+            <view class="item-3"></view>
+          </view>        
+        </view>
+
+
+        <view class="list-item" wx:for="{{friendList}}" wx:key="index">
+          <navigator url="{{'/pages/detail/detail?userId='+item._id}}" open-type="navigate" hover-class="none">
+            <image src="{{item.userPhoto}}"></image>
+          </navigator>
+          <navigator class="list-text" url="{{'/pages/message/chatroom/chatroom?userId='+item._id+'&userName='+item.nickName}}" open-type="navigate" hover-class="none">
+            <view class="item-2">
+              <view class="item-name">{{item.nickName}}</view>
+              <view class="item-cont">122</view>
+            </view>
+            <view class="item-3 iconfont iconyoujiantou"></view>
+
+          </navigator>
+
+        </view>
+
+      </view>
+    </swiper-item>
+
+
+    <swiper-item class="swiper-item" scroll-y="true" style="overflow-y:auto">
+      <view class='msg-list'>
+
+
+        <view class="list-item" wx:for="{{friendList}}" wx:key="index">
+          <navigator url="{{'/pages/detail/detail?userId='+item._id}}" open-type="navigate" hover-class="none">
+            <image src="{{item.userPhoto}}"></image>
+          </navigator>
+          <navigator class="list-text" url="{{'/pages/message/chatroom/chatroom?userId='+item._id+'&userName='+item.nickName}}" open-type="navigate" hover-class="none">
+            <view class="item-2">
+              <view class="item-name">{{item.nickName}}</view>
+              <view class="item-cont">{{item.signature}}</view>
+            </view>
+            <view class="item-3 iconfont iconyoujiantou"></view>
+          </navigator>
+          </view>
+
+
+      </view>
+    </swiper-item>
+
+  </swiper>
+
+
+</view>
+  
+</view>

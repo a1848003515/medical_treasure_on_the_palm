@@ -1,0 +1,135 @@
+<!--miniprogram/pages/index/search/search.wxml-->
+<view class="search">
+
+  <view class="search-nav">
+    <input wx:if="{{pointId=='Hospital'}}" placeholder="请输入您要查询的医院" bindinput="handleGet"></input>
+
+    <view wx:elif="{{pointId=='Pharmacy'}}" class="pharmacy">
+      <input placeholder="请输入您要查询的药店" bindinput="handleGet"></input>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[2]}}
+        </view>
+      </picker>
+    </view>
+
+
+    <input wx:elif="{{pointId=='Drugs'}}" placeholder="请输入您要查询的药品" bindinput="handleGet"></input>
+
+    <input wx:elif="{{pointId=='Health'}}" placeholder="请输入资讯关键字。例：感冒" bindinput="handleGet"></input>
+    <input wx:else placeholder="请输入关键字，例：感冒" bindinput="handleGet"></input>
+    <button bindtap="handlePost">搜索</button>
+  </view>
+  <!-- 医院搜索 -->
+  <view class="search-list" wx:if="{{pointId=='Hospital'}}">
+    <view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="handleToHospital" data-id="{{item.hosName}}">
+      <view class="nav-list" hover-class="none">
+        <image class="list-img" mode="aspectFill" src="{{item.img}}"></image>
+        <view class="list-text">
+          <view>
+            <text>名称：{{item.hosName}}</text>
+          </view>
+          <view>
+            <text>类型：{{item.type}}</text>
+          </view>
+          <view>
+            <text>水平：{{item.level}}</text>
+          </view>
+          <view>
+            <text>地址：{{item.provinceName}} {{item.cityName}} {{item.addr}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <!-- 药店搜索 -->
+  <view class="search-list" wx:elif="{{pointId=='Pharmacy'}}">
+    <view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="handleToPharmacy">
+      <view class="nav-list" hover-class="none">
+        <view class="list-text">
+          <view>
+            <text>名称：{{item.name}}</text>
+          </view>
+          <view>
+            <text>电话：{{item.telephone}}</text>
+          </view>
+          <view>
+            <text>地址：{{item.city}}{{item.area}}{{item.address}}</text>
+          </view>
+          <view>
+            <text>经纬度：{{item.location.lng}}  {{item.location.lat}}</text>
+          </view>
+        </view>
+
+      </view>
+
+
+      <view class="list-nav"  bindtap="handleTo" data-name="{{item.name}}" data-lng="{{item.location.lng}}" data-lat="{{item.location.lat}}" data-addr="{{item.city+item.area+item.address}}">
+          <image mode="aspectFill" src="../../../images/near/nav.png"></image>
+          <br/>
+          <view style="font-size:20rpx;color:#1296db;">去这里</view>
+      </view>
+    </view>
+  </view>
+  <!-- 药品搜索 -->
+  <view class="search-list" wx:elif="{{pointId=='Drugs'}}">
+    <view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="handleToDrug" data-id="{{item.id}}">
+      <view class="nav-list" hover-class="none">
+        <view class="list-text">
+          <view>
+            <text>名称：{{item.drugName}}</text>
+          </view>
+          <view>
+            <text>类型：{{item.tag}}</text>
+          </view>
+          <view>
+            <text>用途：{{item.zzjb}}</text>
+          </view>
+          <view>
+            <text>注意：{{item.etyy}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <!-- 健康资讯 -->
+  <view class="search-list" wx:elif="{{pointId=='Health'}}">
+    <view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="handleToHealth" data-id="{{item.id}}">
+      <view class="nav-list" hover-class="none">
+        <view class="list-text">
+          <view>
+            <text>标题：{{item.title}}</text>
+          </view>
+          <view>
+            <text>类型：{{item.tname}}</text>
+          </view>
+          <view>
+            <text>来源：{{item.author}}</text>
+          </view>
+          <view>
+            <text>时间：{{item.time}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <!-- 健康知识 -->
+  <view class="search-list" wx:else>
+    <view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="handleToKnow" data-id="{{item.id}}">
+      <view class="nav-list" hover-class="none">
+        <view class="list-text">
+          <view>
+            <text>标题：{{item.name}}</text>
+          </view>
+          <view>
+            <text>类型：{{item.subTypeName}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

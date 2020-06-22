@@ -1,0 +1,68 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<view class="detail">
+  <block wx:if="{{isHidden}}">
+    <view wx:if="{{isFriend}}" class="detail-button">
+      <button bindtap="handleDel" class="button1">删除好友</button>
+      <button bindtap="handleMsg" class="button2">发送消息</button>
+    </view>
+    <button wx:else bindtap="handleAddFriend">添加好友</button>
+  </block>
+
+
+  <view class="detail-item">
+    <text>头像： </text>
+    <image src="{{detail.userPhoto}}"></image>
+  </view>
+
+  <view class="detail-item">
+    <text>昵称： </text>
+    <text>{{detail.nickName}}</text>
+  </view>
+
+  <view class="detail-item">
+    <text>简介： </text>
+    <text>{{detail.signature}}</text>
+  </view>
+
+  <view class="detail-item">
+    <text>医院： </text>
+    <text>{{detail.address}}</text>
+  </view>
+
+  <view class="detail-item">
+    <text>职业： </text>
+    <text>{{detail.occupation}}</text>
+  </view>
+
+  <view class="detail-item">
+    <text>手机号： </text>
+    <text style="margin-right:10rpx;">{{detail.phoneNumber}}</text>
+    <call-phone wx:if="{{detail.phoneNumber}}" phoneNumber="{{ detail.phoneNumber }}" />
+  </view>
+
+  <view class="detail-item">
+    <text>微信号： </text>
+    <text style="margin-right:10rpx;">{{detail.weixinNumber}}</text>
+    <copy-text wx:if="{{detail.weixinNumber}}" copyText="{{detail.weixinNumber}}" />
+  </view>
+
+
+
+
+
+
+  <view wx:if="{{isHidden && detail.identity=='doctor'}}" class="detail-item">
+    <text>预约： </text>
+    <picker bindchange="bindPickerChange" range="{{registerDate}}" value="{{index}}">
+      <view class="register-item">{{registerDate[index]}}</view>
+    </picker>
+
+
+    <picker mode="time" value="{{time}}" start="{{registerTime.start}}" end="{{registerTime.end}}" bindchange="bindPickerTime">
+      <view class="register-item">{{time}}</view>
+    </picker>
+
+    <button bindtap="handleRegister">提交</button>
+  </view>
+  
+</view>

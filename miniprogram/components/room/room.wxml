@@ -1,0 +1,72 @@
+<!--components/room/room.wxml-->
+<view class="chatroom">
+  <view class="header">
+    <!-- display number of people in the room -->
+    <view class="left"></view>
+    <!-- room name -->
+    <view class="middle">{{groupName}}</view>
+    <!-- reserved -->
+    <view class="right"></view>
+  </view>
+
+  <!-- chats -->
+  <scroll-view style="flex:1" class="body" scroll-y scroll-with-animation="{{scrollWithAnimation}}" scroll-top="{{scrollTop}}" scroll-into-view="{{scrollToMessage}}" bindscrolltoupper="onScrollToUpper">
+    <!-- wx:key="{{item._id}}" -->
+    <view wx:for="{{chats}}" wx:key="index" id="item-{{index}}" class="message {{openId == item._openid ? 'message__self' : ''}}">
+      <image class="avatar" src="{{item.userPhoto}}" mode="scaleToFill"></image>
+      <view class="main">
+        <view class="nickname">{{item.nickName}}</view>
+        <block wx:if="{{item.msgType === 'image'}}">
+          <view class="image-wrapper">
+            <view class="loading" wx:if="{{item.writeStatus > -1}}">{{item.writeStatus}}%</view>
+            <image src="{{item.tempFilePath || item.imgFileID}}" data-fileid="{{item.tempFilePath || item.imgFileID}}" class="image-content" style="{{item.imgStyle}}" mode="scallToFill" bindtap="onMessageImageTap"></image>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="text-wrapper">
+            <view class="loading" wx:if="{{item.writeStatus === 'pending'}}">···</view>
+            <view wx:if="{{item.msgType !== 'record'}}" class="text-content">{{item.textContent}}</view>
+          </view>
+        </block>
+
+        <block wx:if="{{item.msgType === 'record'}}">
+          <view class="text-wrapper" data-file="{{item.recordID}}" bindtap="play">
+
+
+            <view class="loading" wx:if="{{item.writeStatus === 'pending'}}">···</view>
+            <image src="{{openId == item._openid ? '../../images/components/listen.png' : '../../images/components/listenl.png'}}" class="image-content2" mode="scallToFill"></image>
+
+          </view>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+
+
+
+
+
+  <!-- message sender -->
+  <view class="footer">
+    <view class="message-sender" wx:if="{{userInfo}}">
+
+      <view wx:if="{{isYuYin}}" class="send-msg">
+        <image class="btn-send-image" src="../../images/components/jianpan.png" bindtap='btnRecord'></image>
+        <view  style="border: 2rpx solid #dddcdd;  background: #f6f5f7; " class="text-msg text-input" mode="scaleToFill" bindtouchstart="yuyin" bindtouchend="stop">{{yuYinText}}</view>
+        <!-- <view wx:if="{{recording}}" style="border: 2rpx solid #dddcdd;  background: #f6f5f7; "class="text-msg text-input" mode="scaleToFill" bindtap="stop">录音中...</view> -->
+      </view>
+      <view wx:else class="send-msg">
+        <image class="btn-send-image" src="../../images/components/yuyin.png" bindtap='btnRecord'></image>
+        <input class="text-input" type="text" confirm-type="send" bindconfirm="onConfirmSendText" cursor-spacing="20" value="{{textInputValue}}" bindinput="handleGet"></input>
+      </view>
+
+      <view wx:if="{{logged}}" style="width:90rpx;height:50rpx;font-size:30rpx;text-align: center;line-height:50rpx;background-color:#07C160;color:#fff;border-radius:10rpx;" bindtap="handleSend">发送</view>
+      <image wx:else src="./photo.png" class="btn-send-image" mode="scaleToFill" bindtap="onChooseImage"></image>
+    </view>
+
+    <view class="message-sender" wx:if="{{!userInfo}}">
+      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo">请先登录后参与聊天</button>
+    </view>
+  </view>
+
+</view>

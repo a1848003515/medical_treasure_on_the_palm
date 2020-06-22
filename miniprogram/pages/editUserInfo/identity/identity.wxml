@@ -1,0 +1,7 @@
+<!--miniprogram/pages/editUserInfo/identity/identity.wxml-->
+<view>姓名: </view><input value="{{nickName}}" type="text" bindinput="handleText1" placeholder="请输入您的姓名"></input>
+<view>工作医院: </view><input value="{{address}}" type="text"  bindinput="handleText2" placeholder="请输入您所在的医院"></input>
+<view>岗位: </view><input value="{{occupation}}" type="text" bindinput="handleText3" placeholder="请输入您的岗位"></input>
+<view>职工号: </view><input value="{{occupationNumber}}" type="number"  bindinput="handleText4" placeholder="请输入您的职工号"></input>
+
+<button bindtap="handleBtn">保存</button>

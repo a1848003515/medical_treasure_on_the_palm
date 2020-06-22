@@ -1,0 +1,28 @@
+<!--miniprogram/pages/contact/wenz/wenz.wxml-->
+<view class="detail">
+  <view class="content">
+    <view class="content-text">
+      <text class="text">标题：</text>
+      <text>{{list.title}}</text>
+    </view>
+    <view class=" content-text ">
+      <text class="text">分类：</text>
+      <text>{{list.tname}}</text>
+    </view>
+    <view class="content-text">
+      <text class="text">时间：</text>
+      <text>{{list.time}}</text>
+    </view>
+    
+    <view class="content-text">
+      <text class="text">来源：</text>
+      <text>{{list.author}}</text>
+    </view>
+    <view class=" content-text ">
+      <text class="text">详情：</text>
+      <text>{{list.content}}</text>
+    </view>
+  </view>
+
+
+</view>

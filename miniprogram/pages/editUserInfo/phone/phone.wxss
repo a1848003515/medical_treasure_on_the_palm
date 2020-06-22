@@ -1,0 +1,14 @@
+/* miniprogram/pages/editUserInfo/phone/phone.wxss */
+button:not([size='mini']){
+  width:100%;
+  background-color:#259225;
+  color:#fff;
+  font-size:18px;
+  font-weight:600;
+}
+input {
+  font-size:42rpx;
+  width:100%;
+  height:71rpx;
+  border:1px solid #b6b5b4;
+}

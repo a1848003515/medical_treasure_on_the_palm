@@ -1,0 +1,29 @@
+<!--miniprogram/pages/index/details/health/health.wxml-->
+
+<view class="detail" wx:if="{{logged!=-1}}">
+  <view class="content">
+    <view class="content-text">
+      <text class="text">标题：</text>
+      <text>{{item.title}}</text>
+    </view>
+    <view class=" content-text ">
+      <text class="text">分类：</text>
+      <text>{{item.tname}}</text>
+    </view>
+    <!-- <view class="content-text">
+      <text class="text">时间：</text>
+      <text>{{item.time}}</text>
+    </view> -->
+    
+    <view class="content-text">
+      <text class="text">来源：</text>
+      <text>{{item.author}}</text>
+    </view>
+    <view class=" content-text ">
+      <text class="text">详情：</text>
+      <text>{{item.content}}</text>
+    </view>
+  </view>
+
+
+</view>

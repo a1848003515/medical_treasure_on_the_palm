@@ -1,0 +1,21 @@
+/* miniprogram/pages/editUserInfo/identity/identity.wxss */
+button:not([size='mini']){
+  width:100%;
+  background-color:#259225;
+  color:#fff;
+  font-size:18px;
+  font-weight:600;
+}
+input {
+  margin:10rpx auto;
+  padding-left:10rpx;
+  font-size:32rpx;
+  width:90%;
+  height:71rpx;
+  border:1px solid #b6b5b4;
+  border-radius: 20rpx;
+}
+view{
+  text-align: center;
+  font-weight:600;
+}

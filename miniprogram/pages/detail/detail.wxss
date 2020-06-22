@@ -1,0 +1,67 @@
+/* miniprogram/pages/detail/detail.wxss */
+
+.detail-item {
+  margin: 20rpx;
+  border-bottom: 1px dashed #b4b5b6;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.detail-item image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.detail-item text {
+  font-size: 18px;
+}
+
+.detail-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-button button {
+  width: 50%;
+}
+
+.button1:not([size='mini']) {
+  background-color: #ff5a68;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button2:not([size='mini']) {
+  background-color: #00ceff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.register-item {
+  width: 200rpx;
+  height: 70rpx;
+  background: #f1f3f8;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  color: #8c9aa8;
+  margin:0 10rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.detail-item button:not([size='mini']) {
+  background-color:#259225;
+  color:#fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+

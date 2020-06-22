@@ -1,0 +1,21 @@
+<!--miniprogram/pages/contact/contact.wxml-->
+<button bindtap="handlePost">发表文章</button>
+<view>
+  <view class="contact">我的文章</view>
+  <view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="handleToHealth" data-id="{{item._id}}">
+    <view class="nav-list" hover-class="none">
+      <view class="list-text">
+        <view>
+          <text>标题：{{item.title}}</text>
+        </view>
+        <view>
+          <text>类型：{{item.tname}}</text>
+        </view>
+        <view>
+          <text>时间：{{item.time}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

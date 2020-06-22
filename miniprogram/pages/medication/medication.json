@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "medication":"/components/medicationC/medicationC",
+    "medication2": "/components/medicationB/medicationB"
+  }
+}

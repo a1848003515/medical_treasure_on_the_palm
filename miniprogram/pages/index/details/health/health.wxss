@@ -1,0 +1,29 @@
+/* miniprogram/pages/index/details/health/health.wxss */
+.detail{
+  width:100%;
+  height:100%
+}
+.detail .image{
+  width:70%;
+  height:300rpx;
+
+  margin:20rpx auto;
+}
+.image image{
+  width:100%;
+  height:100%;
+
+
+}
+.content{
+  width:90%;
+  margin:0 auto;
+
+}
+.content-text{
+  margin:20rpx 10rpx;
+}
+.text{
+  font-weight:600;
+  font-size:35rpx;
+}

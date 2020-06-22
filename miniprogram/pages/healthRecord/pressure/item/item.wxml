@@ -1,0 +1,37 @@
+<!--miniprogram/pages/healthRecord/pressure/item/item.wxml-->
+
+<view class="item">
+<button bindtap="handlePost">保存</button>
+<view class="title">
+    <view class="title-item1">日期：{{itemId}}月份</view>
+    <view class="title-item2">
+        <view class="item2-day">
+          <view class="day">早上</view>
+          <view class="day">下午</view>
+        </view>
+        <view class="item2-content">
+          <view class="content">舒张压</view>
+          <view class="content">收缩压</view>
+          <view class="content">脉搏</view>
+          <view class="content">舒张压</view>
+          <view class="content">收缩压</view>
+          <view class="content">脉搏</view>
+        </view>
+    </view>
+</view>
+
+<view class="form">
+  <view class="form-item" wx:for="{{list}}" wx:key="index">   
+    <view class="form-tr">{{item}}</view>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handle1" placeholder="{{obj[itemId][item].number1}}"></input>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handle2" placeholder="{{obj[itemId][item].number2}}"></input>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handle3" placeholder="{{obj[itemId][item].number3}}"></input>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handle4" placeholder="{{obj[itemId][item].number4}}"></input>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handle5" placeholder="{{obj[itemId][item].number5}}"></input>
+    <input  data-id="{{item}}" class="form-td" type="text" maxlength="5" bindinput="handle6" placeholder="{{obj[itemId][item].number6}}"></input>
+  </view>
+</view>
+
+
+</view>
+

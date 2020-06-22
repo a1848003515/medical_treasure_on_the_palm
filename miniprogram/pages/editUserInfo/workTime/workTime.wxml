@@ -1,0 +1,34 @@
+<!--miniprogram/pages/editUserInfo/workTime/workTime.wxml-->
+<view class="workTime">
+  <view class="setTime">
+    <text>请输入您一周工作的天数:</text>
+    <input type="number" placeholder="请输入1~7" maxlength='1' bindinput="handleGetNumber"></input>
+    <button bindtap="handlePostNumber">发送</button>
+  </view>
+
+    
+  <view wx:if="{{logged}}">
+
+    <view wx:for="{{List}}" wx:key="index" class="work">
+      <text>星期：</text>
+      <input type="number" placeholder="请输入1~7" maxlength='1' bindinput="{{'handleGetDate'+index}}"></input>
+    </view>
+
+
+    <view class="pickTime">
+    <text>开始时间</text>
+      <picker mode="time" value="{{time}}" start="00：00" end="23：59" bindchange="bindGetTimeStart">
+      <view class="time-item">{{workTimeStart}}</view>
+    </picker>
+
+
+    <text>结束时间</text>
+    <picker mode="time" value="{{time}}" start="00：00" end="23：59" bindchange="bindGetTimeEnd">
+      <view class="time-item">{{workTimeEnd}}</view>
+    </picker>
+    </view>
+    <button bindtap="handlePost">提交</button>
+
+  </view>
+
+</view>

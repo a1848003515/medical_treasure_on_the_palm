@@ -1,0 +1,6 @@
+<!--miniprogram/pages/healthRecord/pressure/preessure.wxml-->
+<view class="preessure" style="background-image: url('../../../images/user/timg2.jpg');background-size:100% 100%;">
+  <view class="preessure-item" wx:for="{{list}}" wx:key="index">
+    <navigator url="{{'./item/item?itemId='+item}}">{{item}}月份</navigator>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<!--components/removeList/removeList.wxml-->
+<view class="area">
+  <view class="view" direction="horizontal">
+    <navigator url="{{'/pages/detail/detail?userId='+userMessage._id}}" open-type="navigate">
+      <image src="{{userMessage.userPhoto}}"></image>
+    </navigator>
+    <view class=".item-2">
+      <view class="item-name">{{userMessage.nickName}}</view>
+    <view class="item-cont">2</view>
+    </view>
+    <view class="add" bindtap="handleAddFriend">添加</view>
+    <view class="delete" bindtap="handleDelMessage">X</view>
+  </view> 
+</view>
